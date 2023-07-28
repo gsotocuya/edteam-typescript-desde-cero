@@ -46,5 +46,18 @@ let mensaje = `
 Mi nombre es ${nombreCompleto} y tengo ${arregloCursos.length} cursos.
 ¡Gracias por asistir!
 `;
-let mensaje = '\n Mi nombre es ' + nombreCompleto + ' y tengo ' + arregloCursos.length;
 console.log("mensaje", mensaje);
+// tipos especiales en TypeScript
+// tipo: any
+let desconocido; //seria como: var desconocido;
+desconocido = 'hola';
+desconocido = 2;
+let desconocido2 = 2;
+//Tipo: Void
+let vacio;
+function mostrarContenido(curso) {
+    const mensaje = curso ? `Bienvenido al curso ${curso}` : 'Suscribete al curso!';
+    console.log('mensaje', mensaje);
+}
+// console.log('typescript', mostrarContenido('typescript'));
+mostrarContenido("typescript");
