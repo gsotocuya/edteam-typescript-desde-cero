@@ -122,4 +122,21 @@ cursos = ["TypeScript", "Angular"];
 let nombres: Array<string>;
 nombres = ['Luis Aviles', 'Alvaro Felipe'];
 
-let arreglo: any[] = [2, 'cadena', true];
+let arreglo: any[] = [2, 'cadena', true];  // Evitar any
+
+//Tuplas
+let infoCoursos:[string, number] = ['typescript', 100];
+infoCoursos = ['angular', 200];
+
+let curso: [string, number, string] = ['typescript', 150, '08/2019'];
+console.log('curso', curso);
+let nuevosInscritos = 10;
+
+console.log('fecha de inicio', (curso[2]))
+console.log("total de inscritos", curso[1] + nuevosInscritos);
+
+let tuplaTest: [string, string] = ['a', 'b'];
+let tuplaTemp: [string, string] = ['c', 'd'];
+
+tuplaTemp = tuplaTest;
+console.log('tuplaTemp', tuplaTemp)

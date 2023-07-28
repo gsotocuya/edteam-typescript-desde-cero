@@ -96,4 +96,16 @@ cursos = ["TypeScript", "Angular"];
 // Arreglos con Generics
 let nombres;
 nombres = ['Luis Aviles', 'Alvaro Felipe'];
-let arreglo = [2, 'cadena', true];
+let arreglo = [2, 'cadena', true]; // Evitar any
+//Tuplas
+let infoCoursos = ['typescript', 100];
+infoCoursos = ['angular', 200];
+let curso = ['typescript', 150, '08/2019'];
+console.log('curso', curso);
+let nuevosInscritos = 10;
+console.log('fecha de inicio', (curso[2]));
+console.log("total de inscritos", curso[1] + nuevosInscritos);
+let tuplaTest = ['a', 'b'];
+let tuplaTemp = ['c', 'd'];
+tuplaTemp = tuplaTest;
+console.log('tuplaTemp', tuplaTemp);
