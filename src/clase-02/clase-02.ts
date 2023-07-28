@@ -104,3 +104,22 @@ function retornoUndefined(): undefined {
 
 let variableSinValor = undefined;
 console.log('variableSinValor', undefined);
+
+function saludo(nombre?:string): string {
+    if(nombre)
+        return 'Hola ' + nombre;
+    return 'Hola!'
+}
+
+console.log(saludo(nombreCompleto));
+console.log(saludo());
+
+//Arreglos en TypeSCript
+let cursos: string[];
+cursos = ["TypeScript", "Angular"];
+
+// Arreglos con Generics
+let nombres: Array<string>;
+nombres = ['Luis Aviles', 'Alvaro Felipe'];
+
+let arreglo: any[] = [2, 'cadena', true];

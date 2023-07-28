@@ -83,3 +83,17 @@ function retornoUndefined() {
 }
 let variableSinValor = undefined;
 console.log('variableSinValor', undefined);
+function saludo(nombre) {
+    if (nombre)
+        return 'Hola ' + nombre;
+    return 'Hola!';
+}
+console.log(saludo(nombreCompleto));
+console.log(saludo());
+//Arreglos en TypeSCript
+let cursos;
+cursos = ["TypeScript", "Angular"];
+// Arreglos con Generics
+let nombres;
+nombres = ['Luis Aviles', 'Alvaro Felipe'];
+let arreglo = [2, 'cadena', true];
