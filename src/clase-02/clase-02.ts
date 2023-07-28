@@ -76,4 +76,31 @@ function mostrarContenido(curso: string): void{
 // console.log('typescript', mostrarContenido('typescript'));
 mostrarContenido("typescript");
 
+//tipo : Never
+let nunca: never;
+function returnaError(error: string): never{
+    throw new Error('Error TypeScript.' + error);
+    //Nunca retorna un valor!
+}
 
+// returnaError("valor inesperado");
+
+function cicloInfinito(): never{
+    while(true){      
+    }
+}
+
+// tipo: null y undefined
+let variableUndefined: undefined = undefined;
+let variableNull: null = null;
+
+function retornoNull(): null {
+    return null;
+}
+
+function retornoUndefined(): undefined {
+    return undefined;
+}
+
+let variableSinValor = undefined;
+console.log('variableSinValor', undefined);
