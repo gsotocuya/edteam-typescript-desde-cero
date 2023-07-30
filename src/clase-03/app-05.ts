@@ -25,3 +25,17 @@ curso2 = {
 }
 
 console.log('cursoTypeScript', cursoTypeScript)
+
+// EXTENDIENDO INTERFACES | HERENCIA DE INTERFACES
+
+interface CursoEDteam extends ICurso{
+    costo: number;
+}
+
+const primerCurso: CursoEDteam = {
+    nombre: 'TypeScript desde Cero', //ICurso
+    identificador: 200, // ICurso
+    costo: 100 //CursoEDteam
+}
+
+console.log('primerocurso', primerCurso);

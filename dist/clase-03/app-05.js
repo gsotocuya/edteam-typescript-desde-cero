@@ -17,3 +17,9 @@ curso2 = {
     identificador: 100
 };
 console.log('cursoTypeScript', cursoTypeScript);
+const primerCurso = {
+    nombre: 'TypeScript desde Cero',
+    identificador: 200,
+    costo: 100 //CursoEDteam
+};
+console.log('primerocurso', primerCurso);
