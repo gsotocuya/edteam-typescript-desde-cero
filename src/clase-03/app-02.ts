@@ -3,19 +3,24 @@ export {}; //Modulo en TS
 
 let curso: string = 'TypeScript';
 // Cursos codigo: JavaScript = 1, Type = 2
-let cursoNuevo: string | number;
+
+type Curso = string | number;
+
+
+
+let cursoNuevo: Curso;
 // cursoNuevo = true;
 cursoNuevo = 'JavaScript';
 cursoNuevo = 2; // TypeScript
 
-function getCurso(): string | number{
+function getCurso(): Curso{
     // return 'JavaScript';
     return 1;
 }
 
 //arreglos
 let cursos: string[] = ['JavaScript', 'TypeScript']
-let cursos2: (string | number )[] = ['JavaScript', 'TypeScript',1]
+let cursos2: Curso[] = ['JavaScript', 'TypeScript',1]
 
 console.log('cursos', cursos);
 console.log('cursos2', cursos2);
