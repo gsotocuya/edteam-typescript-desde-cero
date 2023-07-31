@@ -7,8 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 //DECORADORES
-function Entidad(target) {
-    console.log('Entidad', target);
+function Entidad(config) {
+    console.log('Entidad', config);
+    return function (target) {
+        //Dinamicamente: asignamos la propiedad clave a la clase
+        target.clave = config.clave;
+        console.log('target', target);
+    };
 }
 let Curso = class Curso {
     constructor(_id, _nombre) {
@@ -29,6 +34,21 @@ let Curso = class Curso {
     }
 };
 Curso = __decorate([
-    Entidad
+    Entidad({
+        clave: 'CURSO'
+    })
 ], Curso);
+let EscuelaDigital = class EscuelaDigital {
+};
+EscuelaDigital = __decorate([
+    Entidad({
+        clave: 'ESCUELA_DIGITAL'
+    })
+], EscuelaDigital);
+function analizarClase(clase) {
+    console.log('clave:', clase.clave);
+}
 let typescript = new Curso(1, 'TypeScript');
+analizarClase(Curso); //parametro: una clase
+let escuela = new EscuelaDigital();
+analizarClase(EscuelaDigital);
