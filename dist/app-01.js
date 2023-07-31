@@ -8,18 +8,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 //DECORADORES
 function Entidad(config) {
-    console.log('Entidad', config);
+    console.log("Entidad", config);
     return function (target) {
         //Dinamicamente: asignamos la propiedad clave a la clase
         target.clave = config.clave;
-        console.log('target', target);
+        console.log("target", target);
     };
+}
+function enumerable(value) {
+    return function (target, propertyKey, descriptor) {
+        descriptor.enumerable = value;
+    };
+}
+function readonly(target, name, descriptor) {
+    descriptor.writable = false;
+    return descriptor;
 }
 let Curso = class Curso {
     constructor(_id, _nombre) {
         this._id = _id;
         this._nombre = _nombre;
+        this.prueba = "";
     }
+    getPrueba() {
+        return this.prueba;
+    }
+    lectura() { }
     get id() {
         return this._id;
     }
@@ -33,22 +47,36 @@ let Curso = class Curso {
         this._nombre = nombre;
     }
 };
+__decorate([
+    enumerable(true) // no aparece como propiedad
+], Curso.prototype, "getPrueba", null);
+__decorate([
+    readonly
+], Curso.prototype, "lectura", null);
 Curso = __decorate([
     Entidad({
-        clave: 'CURSO'
+        clave: "CURSO",
     })
 ], Curso);
 let EscuelaDigital = class EscuelaDigital {
 };
 EscuelaDigital = __decorate([
     Entidad({
-        clave: 'ESCUELA_DIGITAL'
+        clave: "ESCUELA_DIGITAL",
     })
 ], EscuelaDigital);
 function analizarClase(clase) {
-    console.log('clave:', clase.clave);
+    console.log("clave:", clase.clave);
 }
-let typescript = new Curso(1, 'TypeScript');
+function mostrarPropiedades(clase) {
+    for (let prop in clase.prototipe) {
+        console.log("prop", prop);
+    }
+}
+let typescript = new Curso(1, "TypeScript");
 analizarClase(Curso); //parametro: una clase
+//sobrescritura de la function
+// typescript.lectura = function() {}; //error
 let escuela = new EscuelaDigital();
 analizarClase(EscuelaDigital);
+mostrarPropiedades(Curso);
