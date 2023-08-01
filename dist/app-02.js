@@ -1,28 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// MIEMBROS PUBLICOS
-class Curso {
-    constructor(id, nombre) {
-        this.id = id;
-        this.nombre = nombre;
-    }
+// usar una libreria externa JavaSCript: lodash
+//package.json
+// npm init -y
+// npm  install lodash --save
+const lodash_1 = require("lodash");
+function numberAleatorio(a, b) {
+    return (0, lodash_1.random)(a, b);
 }
-class EscuelaDigital {
-    constructor(nombre) {
-        this.cursos = [];
-        this.nombre = nombre;
-    }
-    agregarCurso(curso) {
-        this.cursos.push(curso);
-    }
-}
-const escuela = new EscuelaDigital('EDteam');
-let cursoJS = new Curso(1, 'JavaScript');
-let cursoTS = new Curso(2, "TypeScript");
-escuela.agregarCurso(cursoJS);
-escuela.agregarCurso(cursoTS);
-// Acceder a los atriburos publicos;
-cursoJS.nombre = 'JavaScript desde Cero';
-cursoJS.id = 20;
-console.log(escuela);
-console.log(escuela.nombre);
+console.log('numberoAleatorio(1,10)', numberAleatorio(1, 10));
+console.log("random(1,100)", (0, lodash_1.random)(1, 100));

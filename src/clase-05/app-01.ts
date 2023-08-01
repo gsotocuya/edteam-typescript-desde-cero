@@ -75,3 +75,4 @@ analizarClase(Curso); //parametro: una clase
 let escuela = new EscuelaDigital();
 analizarClase(EscuelaDigital);
 mostrarPropiedades(Curso);
+
