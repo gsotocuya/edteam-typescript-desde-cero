@@ -10,5 +10,6 @@ function numberAleatorio(a:number, b:number){
 
 console.log('numberoAleatorio(1,10)', numberAleatorio(1,10));
 console.log("random(1,100)", random(1, 100));
+console.log("random(50,80)", random(50, 80));
 
 

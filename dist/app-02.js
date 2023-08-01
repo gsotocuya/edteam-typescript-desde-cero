@@ -10,3 +10,4 @@ function numberAleatorio(a, b) {
 }
 console.log('numberoAleatorio(1,10)', numberAleatorio(1, 10));
 console.log("random(1,100)", (0, lodash_1.random)(1, 100));
+console.log("random(50,80)", (0, lodash_1.random)(50, 80));
